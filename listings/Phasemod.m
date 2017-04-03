@@ -1,7 +1,7 @@
-Fs = 8e3; 
-T = 2; 
+Fs = 8e4; 
+T = 4; 
 t = 0:1/Fs:T;
-F = 100;                % Modulating sig. freq.
+F = 1000;                % Modulating sig. freq.
 s_M = cos(2*pi*F*t); 
 figure
 plot(t, s_M)

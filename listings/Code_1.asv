@@ -1,7 +1,7 @@
 
 A_M = 1;                                    
 OMEGA = 20;                          
-Ws = 5000;                                 
+Ws = 500;                                 
 Fs = Ws/(2*pi);                             
 T = 1/Fs;                                 
 t = [0:T:5*2*pi/OMEGA];                    
@@ -20,9 +20,9 @@ specplot(s_M, Fs);
 % AM-signal
 
 A0=1;                                      
-omega0 = 1000;                               
-freqdev = 2.5;                                   
-s_AM = fmmod(s_M, OMEGA, omega0, phi0); 
+omega0 = 100;                               
+phi0 = 2.5;                                   
+s_AM = pmmod(s_M, OMEGA, omega0, phi0); 
 
 figure
 hold on
@@ -34,10 +34,10 @@ figure
 specplot(s_AM, Fs);  
 xlim([0 250]);
 
-f = fmdemod(s_AM, OMEGA, omega0, phi0);
+f = pmdemod(s_AM, OMEGA, omega0, phi0);
 
 figure
 plot(t, f);                     
 
 figure                                      
-specplot(f, OMEGA); 
+specplot(f, omega0); 
